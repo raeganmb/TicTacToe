@@ -1,0 +1,19 @@
+table {
+    max-width: 400px;
+    width: 100vw;
+    max-height: 400px;
+    height: 100vw;
+    margin: 0 auto;
+  }
+  
+  td {
+    border: solid 1px black;
+    width: 33%;
+    height: 33%;
+    text-align: center;
+  }
+  
+  h1,
+  p {
+    text-align: center;
+  }
