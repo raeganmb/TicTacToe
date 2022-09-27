@@ -5,7 +5,7 @@ const state = {
       [null, null, null],
     ],
     //   players: ["x", "o"],
-    playersTurn: "x",
+    playersTurn: "X",
     winner: null,
   };
   
@@ -33,9 +33,9 @@ const state = {
     let arrayLocation2 = location[1];
     state.board[arrayLocation1][arrayLocation2] = state.playersTurn;
     console.log(checkForWin(state.playersTurn));
-    state.playersTurn === "x"
-      ? (state.playersTurn = "o")
-      : (state.playersTurn = "x");
+    state.playersTurn === "X"
+      ? (state.playersTurn = "O")
+      : (state.playersTurn = "X");
   });
   
   function checkForWin(player) {
@@ -52,7 +52,7 @@ const state = {
         if (playedArray.includes(location)) winCounter++;
       });
       if (winCounter === 3) {
-        messageEl.textContent = `${player} wins `;
+        messageEl.textContent = `Player "${player}" wins!  `;
         let btn = document.createElement("button");
         btn.textContent = "restart";
         btn.addEventListener("click", init);
@@ -94,3 +94,5 @@ const state = {
   //when we click the board we should change whos turn it is
   
   //on each click we should see if there is a winner
+
+  if (turn==0){turn=1}else{turn=0}
