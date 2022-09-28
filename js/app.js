@@ -27,12 +27,10 @@ const messageEl = document.querySelector("#banner");
 // table.listen(click, register move)
 tabelEl.addEventListener("click", function (e) {
   //check where we clicked on the board
-  console.log(e.target);
   let location = e.target.getAttribute("data-location");
   let arrayLocation1 = location[0];
   let arrayLocation2 = location[1];
-  if ((state.board[arrayLocation1][arrayLocation2] = null)) {
-    console.log("triggered");
+  if (!state.board[arrayLocation1][arrayLocation2]) {
     e.target.innerHTML = state.playersTurn;
     state.board[arrayLocation1][arrayLocation2] = state.playersTurn;
     checkForWin(state.playersTurn);
@@ -59,8 +57,6 @@ function checkForWin(player) {
       if (playedArray.includes(location)) winCounter++;
     });
     if (winCounter === 3) {
-      console.log("win");
-
       messageEl.innerHTML = `Player "${player}" wins!  `;
       let btn = document.createElement("button");
       btn.textContent = "restart";
@@ -68,14 +64,6 @@ function checkForWin(player) {
       messageEl.appendChild(btn);
       break;
     }
-    // if (winCounter === null) {
-    //   messageEl.innerHTML = `It's a tie!  `;
-    //   let btn = document.createElement("button");
-    //   btn.textContent = "restart";
-    //   btn.addEventListener("click", init);
-    //   messageEl.appendChild(btn);
-    //   break;
-    // }
   }
 }
 
