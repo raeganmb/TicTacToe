@@ -15,17 +15,21 @@ td {
 }
 
 body {
-  background-image: url("https://imgur.com/a/0N73qZY");
+  background-image: url("https://imagizer.imageshack.com/img924/4351/yTzU01.jpg");
 }
 
 h1 {
   text-align: center;
   font-family: sans-serif;
+  background: white;
+  border: 3px black;
 }
 
 h3 {
   text-align: center;
   font-family: sans-serif;
+  background: white;
+  margin: 24px 150px;
 }
 
 p {

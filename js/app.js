@@ -4,7 +4,6 @@ const state = {
     [null, null, null],
     [null, null, null],
   ],
-  //   players: ["x", "o"],
   playersTurn: "X",
   winner: null,
 };
@@ -20,13 +19,10 @@ const winConditions = [
   ["20", "11", "02"],
 ];
 
-// grab the table element
 const tabelEl = document.querySelector("table");
 const messageEl = document.querySelector("#banner");
 
-// table.listen(click, register move)
 tabelEl.addEventListener("click", function (e) {
-  //check where we clicked on the board
   let location = e.target.getAttribute("data-location");
   let arrayLocation1 = location[0];
   let arrayLocation2 = location[1];
@@ -67,9 +63,6 @@ function checkForWin(player) {
   }
 }
 
-// in memory rep of the board (2d array)
-
-//on load set the 2d array to have null spaces
 function init() {
   state.board.forEach(function (row, rowIdx) {
     row.forEach(function (box, boxIdx) {
@@ -81,12 +74,6 @@ function init() {
 }
 
 function render() {
-  //   tabelEl.children[0].children.forEach(function (tr, rowIdx) {
-  //     tr.children.forEach(function (td, tdIdx) {
-  //       td.textContent = state.board[rowIdx][tdIdx];
-  //     });
-  //   });
-
   messageEl.innerHTML = "Player 'X' clicks a square to start the game!";
 
   state.board.forEach(function (row, rowIdx) {
@@ -95,10 +82,6 @@ function render() {
     });
   });
 }
-
-//when we click the board we should change whos turn it is
-
-//on each click we should see if there is a winner
 
 function switchTurn() {
   if (state.playersTurn === "X") {
